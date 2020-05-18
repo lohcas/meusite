@@ -1,0 +1,271 @@
+/*reset do css. tem que fazer isso*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} /*fim do reset*/
+
+body {
+	background-image: url("../img/backgroud.png");
+	background-size: auto 100vh;
+	font-family: 'Source Code Pro', monospace;	height: 100vh;
+}
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px) {
+	body {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 600px) {
+	body {
+		font-size: 18px;
+	}
+}
+
+
+header {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu {
+	background-color: whitesmoke;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	z-index: 1;
+}
+
+.menu a {
+	display: block;
+	padding: 10px 20px;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.menu a:active,
+.menu a:hover {
+	background-color: rgb(0,97,62);
+	color: lightgray;
+}
+
+.menu ul{
+	display: flex;
+	justify-content: space-around;
+}
+
+.menu li{
+	list-style: none;
+}
+
+a{
+	color: rgb(0,97,62);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#sobre::before { 
+	display: block; 
+	content: " "; 
+	margin-top: -15px; 
+	height: 45px; 
+	visibility: hidden; 
+}
+
+#contato:before { 
+	display: block; 
+	content: " "; 
+	margin-top: -15px; 
+	height: 45px; 
+	visibility: hidden; 
+}
+
+#portfolio:before { 
+	display: block; 
+	content: " "; 
+	margin-top: -15px; 
+	height: 45px; 
+	visibility: hidden; 
+}
+
+.titulo {
+	transform: scale(0.2) translateY(50vh);
+	opacity: 0;
+	animation: linear 2s animaTitulo forwards;
+}
+
+@keyframes animaTitulo{
+	100% {
+		transform: scale(1) translateY(0);
+		opacity: 1;
+	}
+}
+
+.site-subtitle,
+.site-title {
+	color: whitesmoke;
+	text-align: center;
+}
+
+.site-title {
+	font-size: 4em;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+.site-subtitle {
+	font-style: italic;
+	font-family: 'Press Start 2P', cursive;
+}
+
+.sobre,
+.contato,
+.portfolio {
+	padding: 2em;
+	min-height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+	.sobre,
+	.contato,
+	.portfolio {
+		max-width: 1200px;
+}
+}
+
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+	font-family: 'Press Start 2P', cursive;
+	color: whitesmoke;
+	margin-bottom: 1.5em;
+	font-size: 1.5em;
+}
+
+.sobre a {
+	color: crimson;
+	;
+}
+
+.sobre a:hover {
+	color: whitesmoke;
+	background-color: crimson;
+	;
+}
+
+.sobre .avatar {
+	float: right;
+	margin-left: 2em;
+}
+
+.sobre .avatar img {
+	border-radius: 50%;
+}
+
+.sobre p {
+	color: whitesmoke;
+	text-indent: 5em;
+	margin-bottom: 1em;
+	text-align: justify;
+}
+
+.grid {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.portfolio .grid {
+	display: grid;
+	gap: 2em;
+}
+
+@media (min-width: 560px) {
+	.portfolio .grid{
+		grid-template-columns: 240px 240px;
+		justify-content: center;
+	}
+}
+
+@media (min-width: 880px) {
+	.portfolio .grid{
+		grid-template-columns: repeat(3, 240px);
+		align-content: center;
+		justify-content: center;
+		height: calc(100vh - 8em - 40px);
+	}
+}
+
+.portfolio figure {
+	text-align: center;
+}
+
+.img-portfolio {
+	height: 180px;
+	width: 100%;
+	object-fit: cover;
+	object-position: left bottom;
+	transform: scale(1);
+	transition: transform 200ms;
+}
+
+.img-portfolio:hover {
+	transform: scale(1.1);
+	transition: transform 200ms;
+}
+
+/* .card {
+	background-color: red;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+
+.card:hover {
+	transform: rotateY(180deg);
+}
+
+.card-back {
+	background-color: white;
+	height: 180px;
+	width: 100%;
+	transform: rotateY(180deg);
+}
+
+.card-front, 
+.card-back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	backface-visibility: hidden;
+} */
+
+.contato .icons {
+	text-align: center;
+}
+
+.contato a {
+	color: whitesmoke;
+	font-size: 4em;
+	display: inline-block;
+	margin: 0px 20px;
+}
+.contato a:active,
+.contato a:hover{
+	text-decoration: none;
+	text-shadow: 4px 0px rgba(255,0,0,1), -4px 0px rgba(255,255,0,1);
+
+}
+
+/* @media (min-width: 1200px) {
+	.img-portfolio {
+		height: 10em;
+		width: 100%;
+	} */
+}
